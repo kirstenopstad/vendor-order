@@ -45,15 +45,21 @@ namespace VendorOrder.Controllers
     }
 
     // Creates new orders and adds to vendor order list
-    // [HttpPost("/vendors/{vendorId}/orders")]
-    // public ActionResult Create(int vendorId, string title, string description, int price, string date)
-    // {
-    //   // Create order
-    //   Order newOrder = new Order(title, description, price, date);
-    //   // Add order to vendor orders list
-    //   Vendor selectedVendor = Vendor.Find(vendorId);
-    //   selectedVendor.AddOrder(newOrder);
-    //   return RedirectToAction("Show", vendorId);
-    // }
+    [HttpPost("/vendors/{vendorId}/orders")]
+    public ActionResult Create(int vendorId, string title, string description, int price, string date)
+    {
+      // Create order
+      Order newOrder = new Order(title, description, price, date);
+      // Add order to vendor orders list
+      Vendor selectedVendor = Vendor.Find(vendorId);
+      selectedVendor.AddOrder(newOrder);
+      // Get list of instances of orders relating to this vendor
+      List<Order> vendorOrders = selectedVendor.Orders;
+      // Create model to return vendor and orders
+      Dictionary<string, object> model = new Dictionary<string, object>() {};
+      model.Add("vendor", selectedVendor);
+      model.Add("orders", vendorOrders);
+      return View("Show", model);
+    }
   }
 }
