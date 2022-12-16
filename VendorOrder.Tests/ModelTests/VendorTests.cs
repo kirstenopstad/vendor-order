@@ -85,7 +85,7 @@ namespace VendorOrder.Tests
       Vendor newVendor1 = new Vendor(name, description);
       string name2="Happy Returns";
       string description2="Retirement home";
-      Vendor newVendor2 = new Vendor(name, description);
+      Vendor newVendor2 = new Vendor(name2, description2);
       List<Vendor> newList = new List<Vendor> {};
       // Act
       Vendor.ClearAll();
@@ -105,6 +105,22 @@ namespace VendorOrder.Tests
       int result = newVendor.Id;
       // Assert 
       Assert.AreEqual(1, result);
+    }
+
+    [TestMethod]
+    public void Find_FindInstanceById_Vendor()
+    {
+      // Arrange
+      string name="Suzie's Cafe";
+      string description="Coffee shop";
+      Vendor newVendor1 = new Vendor(name, description);
+      string name2="Happy Returns";
+      string description2="Retirement home";
+      Vendor newVendor2 = new Vendor(name2, description2);
+      // Act
+      Vendor result = Vendor.Find(2);
+      // Assert
+      Assert.AreEqual(newVendor2, result);
     }
   }
 }
