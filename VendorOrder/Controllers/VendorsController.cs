@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using VendorOrder.Models;
+using System.Collections.Generic;
 
 namespace VendorOrder.Controllers
 {
@@ -19,7 +20,12 @@ namespace VendorOrder.Controllers
       return View();
     }
 
-    // [HttpPost("")]
-
+    [HttpPost("/vendors")]
+    public ActionResult Create(string name, string description)
+    {
+      // Create new vendor
+      Vendor newVendor = new Vendor(name, description);
+      return RedirectToAction("Index");
+    }
   }
 }
