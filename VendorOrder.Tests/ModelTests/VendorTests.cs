@@ -93,5 +93,18 @@ namespace VendorOrder.Tests
       // Assert
       CollectionAssert.AreEqual(newList, result); 
     }
+
+    [TestMethod]
+    public void GetId_GetInstanceId_int()
+    {
+      // Arrange
+      string name="Suzie's Cafe";
+      string description="Coffee shop";
+      Vendor newVendor = new Vendor(name, description);
+      // Act
+      int result = newVendor.Id;
+      // Assert 
+      Assert.AreEqual(1, result);
+    }
   }
 }
