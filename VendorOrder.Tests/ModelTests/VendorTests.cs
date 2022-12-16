@@ -122,5 +122,25 @@ namespace VendorOrder.Tests
       // Assert
       Assert.AreEqual(newVendor2, result);
     }
+    
+    [TestMethod]
+    public void AddOrder_AssociatesOrderWithVendor_OrderList()
+    {
+      // Arrange
+      string vendorName="Suzie's Cafe";
+      string vendorDescription="Coffee shop";
+      Vendor newVendor = new Vendor(vendorName, vendorDescription);
+      string title = "Weekend";
+      string description = "Four dozen croissants";
+      int price = 40;
+      string date = "December 16, 2022";
+      Order newOrder = new Order(title, description, price, date);
+      List<Order> newList = new List<Order> { newOrder };
+      newVendor.AddOrder(newOrder);
+      // Act
+      List<Order> result = Vendor.Orders;
+      // Assert 
+      Assert.AreEqual(newList, result);
+    }
   }
 }
