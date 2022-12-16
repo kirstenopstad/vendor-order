@@ -1,0 +1,15 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>@Model["vendor"].Name @Model["orders"].Title Order Details</h1>
+
+<ul>
+  <li>Title: @Model["orders"].Title</li>
+  <li>Description: @Model["orders"].Description</li>
+  <li>Price: @Model["orders"].Price</li>
+  <li>Date: @Model["orders"].Date</li>
+</ul>
+
+<a href='/vendors/@Model["vendor"].Id'><button class="btn btn-primary">View All @Model["vendor"].Name Orders</button></a>
+<a href='/vendors/'><button class="btn btn-primary">View Vendor List</button></a>
