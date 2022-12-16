@@ -6,8 +6,13 @@ using System;
 namespace VendorOrder.Tests
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
+
     [TestMethod]
     public void CreateInstance_CreateNewInstanceOfOrder_Order()
     {
@@ -113,7 +118,7 @@ namespace VendorOrder.Tests
       Order foundOrder = Order.Find(2);
 
       // Assert
-      CollectionAssert.AreEqual(newOrder2, foundOrder);
+      Assert.AreEqual(newOrder2, foundOrder);
     }
   }
 }
