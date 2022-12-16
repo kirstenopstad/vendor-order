@@ -40,5 +40,10 @@ namespace VendorOrder.Models
     {
       Orders.Add(order);
     }
+
+    public static void Delete(Vendor vendor)
+    {
+      _instances.Remove(vendor);
+    }
   }
 }
