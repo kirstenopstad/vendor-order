@@ -11,10 +11,15 @@
 <ul>
 @foreach (Order order in @Model["orders"])
 {
-  <li>Order: @order.Title</li>
-  <li>Description: @order.Description</li>
-  <li>Price: @order.Price</li>
-  <li>Date: @order.Date</li>
+  <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title Order</a>
+    <ul>
+      <li>Description: @order.Description </li>
+      <li>Price: $@order.Price</li>
+      <li>Date: @order.Date</li>
+    </ul>
+  </li>
+
+
 }
 </ul>
 <a href='/vendors/@Model["vendor"].Id/orders/new'><button class="btn btn-primary">Add New Order</button></a>
