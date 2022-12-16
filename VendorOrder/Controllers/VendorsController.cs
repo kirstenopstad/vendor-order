@@ -61,5 +61,17 @@ namespace VendorOrder.Controllers
       model.Add("orders", vendorOrders);
       return View("Show", model);
     }
+    
+    // Delete Vendor
+    [HttpPost("/vendors/{deleteId}")]
+    public ActionResult Destroy(int deleteId)
+    {
+      // Find the vendor to delete
+      Vendor vendorToDelete = Vendor.Find(deleteId); 
+      // Delete vendor
+      Vendor.Delete(vendorToDelete);
+      // Redirect to /vendors
+      return RedirectToAction("Index");
+    }
   }
 }
