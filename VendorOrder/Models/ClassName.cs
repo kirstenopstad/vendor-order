@@ -1,4 +1,4 @@
-namespace ProjectName.Models
+namespace VendorOrder.Models
 {
   public class ClassName
   {

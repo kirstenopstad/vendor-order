@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ProjectName
+namespace VendorOrder
 {
   class Program
   {
@@ -15,9 +15,9 @@ namespace ProjectName
 
       // app.UseDeveloperExceptionPage();
       app.UseHttpsRedirection();
-
+      app.UseStaticFiles();
       app.UseRouting();
-
+    
       app.MapControllerRoute(
         name: "default",
         pattern: "{controller=Home}/{action=Index}/{id?}"
