@@ -120,5 +120,29 @@ namespace VendorOrder.Tests
       // Assert
       Assert.AreEqual(newOrder2, foundOrder);
     }
+
+    [TestMethod]
+    public void Delete_DeleteInstanceOfOrder_List()
+    {
+      // Arrange
+      string title = "Weekend";
+      string description = "Four dozen croissants";
+      int price = 40;
+      string date = "December 16, 2022";
+      Order newOrder = new Order(title, description, price, date);
+      string title2 = "Weekday";
+      string description2 = "Two dozen croissants";
+      int price2 = 20;
+      string date2 = "December 20, 2022";
+      Order newOrder2 = new Order(title2, description2, price2, date2);
+      List<Order> newList = new List<Order> { newOrder2 };
+      
+      // Act
+      Order.Delete(newOrder)
+      List<Order> result = Order.GetAll();
+
+      // Assert
+      CollectionAssert.AreEqual(newList, result)
+    }
   }
 }
