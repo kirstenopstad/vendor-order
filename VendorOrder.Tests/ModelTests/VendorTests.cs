@@ -127,23 +127,25 @@ namespace VendorOrder.Tests
     public void AddOrder_AssociatesOrderWithVendor_OrderList()
     {
       // Arrange
-      // Create Vendor
-      string vendorName="Suzie's Cafe";
-      string vendorDescription="Coffee shop";
-      Vendor newVendor = new Vendor(vendorName, vendorDescription);
       // Create Order
       string title = "Weekend";
       string description = "Four dozen croissants";
       int price = 40;
       string date = "December 16, 2022";
       Order newOrder = new Order(title, description, price, date);
-      // Create test list as control
       List<Order> newList = new List<Order> { newOrder };
+      // Create Vendor
+      string vendorName="Suzie's Cafe";
+      string vendorDescription="Coffee shop";
+      Vendor newVendor = new Vendor(vendorName, vendorDescription);
+      // Add order to vendor
       newVendor.AddOrder(newOrder);
+
       // Act
       List<Order> result = newVendor.Orders;
+
       // Assert 
-      Assert.AreEqual(newList, result);
+      CollectionAssert.AreEqual(newList, result);
     }
   }
 }
