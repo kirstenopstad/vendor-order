@@ -5,11 +5,10 @@ namespace VendorOrder.Controllers
 {
   public class HomeController : Controller
   {
-    [HttpGet("/vendors")]
+    [HttpGet("/")]
     public ActionResult Index() 
     { 
-      List<Vendor> allVendors = Vendor.GetAll();
-      return View(allVendors); 
+      return View(); 
     }
     // [HttpPost("")]
 
