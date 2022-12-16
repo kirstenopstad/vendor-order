@@ -4,10 +4,9 @@ using VendorOrder.Models;
 namespace VendorOrder.Tests
 {
   [TestClass]
-  public class ClassNameTests
+  public class VendorTests
   {
     [TestMethod]
-    // Test methods will go here
     public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
     {
       // any necessary logic to prep for test; instantiating new classes, etc.

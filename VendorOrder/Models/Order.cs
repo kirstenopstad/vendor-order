@@ -1,6 +1,6 @@
 namespace VendorOrder.Models
 {
-  public class ClassName
+  public class Order
   {
     // properties, constructors, methods, etc. go here
   }
