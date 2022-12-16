@@ -5,12 +5,12 @@ namespace VendorOrder.Models
   public class Order
   {
     // properties
+    private static List<Order> _instances = new List<Order> {};
     public string Title { get; set; }
     public string Description {get; set; }
     public int Price { get; set; }
     public string Date { get; set; }
     public int Id { get; }
-    private List<Order> _instances = new List<Order> {};
 
     // constructor
     public Order(string title, string description, int price, string date)
@@ -24,5 +24,14 @@ namespace VendorOrder.Models
     }
 
     // methods
+    public static Order Find(int searchId)
+    {
+      return _instances[searchId - 1];
+    }
+
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
   }
 }
