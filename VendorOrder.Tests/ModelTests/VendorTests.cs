@@ -59,22 +59,22 @@ namespace VendorOrder.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
-    // [TestMethod]
-    // public void GetAll_GetAllInstancesOfVendor_List<Vendor>()
-    // {
-    //   // Arrange
-    //   string name="Suzie's Cafe";
-    //   string description="Coffee shop";
-    //   Vendor newVendor1 = new Vendor(name, description);
-    //   string name2="Happy Returns";
-    //   string description2="Retirement home";
-    //   Vendor newVendor2 = new Vendor(name, description);
-    //   List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
-    //   // Act
-    //   List<Vendor> result = Vendor.GetAll();
-    //   // Assert
-    //   CollectionAssert.AreEqual(newList, result);
-    // }
+    [TestMethod]
+    public void GetAll_GetAllInstancesOfVendor_List()
+    {
+      // Arrange
+      string name="Suzie's Cafe";
+      string description="Coffee shop";
+      Vendor newVendor1 = new Vendor(name, description);
+      string name2="Happy Returns";
+      string description2="Retirement home";
+      Vendor newVendor2 = new Vendor(name2, description2);
+      List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
+      // Act
+      List<Vendor> result = Vendor.GetAll();
+      // Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
 
     // [TestMethod]
     // public void ClearAll_ClearAllInstancesOfVendor_List<Vendor>()
