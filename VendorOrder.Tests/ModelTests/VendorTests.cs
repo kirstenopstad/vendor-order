@@ -10,7 +10,7 @@ namespace VendorOrder.Tests
   {
     public void Dispose()
     {
-      // Vendor.ClearAll();
+      Vendor.ClearAll();
     }
 
     [TestMethod]
@@ -48,19 +48,16 @@ namespace VendorOrder.Tests
       Assert.AreEqual(description, result);
     }
 
-    // [TestMethod]
-    // public void GetEmptyList_GetEmptyListOfVendorOrders_List()
-    // {
-    //   // Arrange
-    //   string name="Suzie's Cafe";
-    //   string description="Coffee shop";
-    //   Vendor newVendor = new Vendor(name, description);
-    //   List<Vendor> newList = new List<Vendor> { };
-    //   // Act
-    //   List<Vendor> result = Vendor.Orders;
-    //   // Assert
-    //   CollectionAssert.AreEqual(newList, result);
-    // }
+    [TestMethod]
+    public void GetAllEmpty_GetEmptyListOfVendorOrders_List()
+    {
+      // Arrange
+      List<Vendor> newList = new List<Vendor> { };
+      // Act
+      List<Vendor> result = Vendor.GetAll();
+      // Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
 
     // [TestMethod]
     // public void GetAll_GetAllInstancesOfVendor_List<Vendor>()
