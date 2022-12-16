@@ -49,7 +49,11 @@ Additionally, code will be reviewed for the following objectives:
 ### Goals
 1. Meet MVP ✅
 2. Allow Pierre to click an Order's name to go to a separate page to view its details. ✅
-3. Add the ability to delete individual Vendors, all Orders belonging to a Vendor, individual Orders, or all Vendors.
+3. Add the ability to delete:
+  - individual Vendors 
+  - all Orders belonging to a Vendor
+  - individual Orders 
+  - or all Vendors.
 4. Add the ability to update Vendor or Order details.
 5. Add the ability for Pierre to note whether an order has been paid for or not.
 6. Add custom CSS and JavaScript.
