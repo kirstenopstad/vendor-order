@@ -33,5 +33,15 @@ namespace VendorOrder.Models
     {
       _instances.Clear();
     }
+
+    public static List<Order> GetAll()
+    {
+      return _instances;
+    }
+
+    public static void Delete(Order order)
+    {
+      _instances.Remove(order);
+    }
   }
 }
