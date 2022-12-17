@@ -45,5 +45,10 @@ namespace VendorOrder.Models
     {
       _instances.Remove(vendor);
     }
+
+    public void DeleteAllOrders()
+    {
+      Orders.Clear();
+    }
   }
 }
