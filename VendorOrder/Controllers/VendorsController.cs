@@ -62,7 +62,7 @@ namespace VendorOrder.Controllers
       return View("Show", model);
     }
     
-    // Delete Vendor
+    // Delete Vendor 
     [HttpPost("/vendors/{deleteId}")]
     public ActionResult Destroy(int deleteId)
     {
@@ -71,7 +71,7 @@ namespace VendorOrder.Controllers
       // Delete vendor
       Vendor.Delete(vendorToDelete);
       // Redirect to /vendors
-      return RedirectToAction("Index");
+      return RedirectToAction("Index", "/vendors");
     }
   }
 }

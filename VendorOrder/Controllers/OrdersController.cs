@@ -28,5 +28,15 @@ namespace VendorOrder.Controllers
       // Return view Show() and pass in model
       return View("Show", model);
     }
+
+    // Delete orders based on orderId
+  //   [HttpPost("/vendors/{vendorDeleteId}/orders/{orderDeleteId}")]
+  //   public ActionResult DestroyOrders(int vendorDeleteId, int orderDeleteId)
+  //   {
+  //     // Find the order to delete
+  //     Order orderToDelete = Order.Find(orderDeleteId);
+  //     Order.Delete(orderToDelete);
+  //     return RedirectToAction("Index", "/vendors");
+  //   }
   }
 }
