@@ -165,5 +165,36 @@ namespace VendorOrder.Tests
       // Assert
       CollectionAssert.AreEqual(newList, result); 
     }
+
+    [TestMethod]
+    public void DeleteAllOrders_DeleteAllOrdersAssociatedWithVendorInstance_EmptyList()
+    {
+      // Arrange
+
+      // Create Order
+      string title = "Weekend";
+      string description = "Four dozen croissants";
+      int price = 40;
+      string date = "December 16, 2022";
+      Order newOrder = new Order(title, description, price, date);
+
+      // Create Vendor
+      string vendorName="Suzie's Cafe";
+      string vendorDescription="Coffee shop";
+      Vendor newVendor = new Vendor(vendorName, vendorDescription);
+
+      // Create Empty List
+      List<Vendor> newList = new List<Vendor> {};
+
+      // Add order to vendor
+      newVendor.AddOrder(newOrder);
+
+      // Act
+      newVendor.DeleteAllOrders();
+      List<Order> result = newVendor.Orders;
+
+      // Assert
+      CollectionAssert.AreEqual(newList, result); 
+    }
   }
 }
