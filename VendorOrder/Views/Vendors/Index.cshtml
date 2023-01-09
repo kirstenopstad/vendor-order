@@ -11,7 +11,10 @@
 <ul>
 @foreach (Vendor vendor in Model)
 {
-  <li><a href="/vendors/@vendor.Id">@vendor.Name</a></li>
+  @if (@vendor.Name != null)
+  {
+    <li><a href="/vendors/@vendor.Id">@vendor.Name</a></li>
+  }
 }
 </ul>
 <a href="/vendors/new"><button class="btn btn-primary">Add Vendor</button></a>
