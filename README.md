@@ -63,10 +63,10 @@ Additionally, code will be reviewed for the following objectives:
 
 * Clone this repo to your workspace.
 * Navigate to the top level of the directory.
-* Navigate to program directory ``` $ cd VendorOrder ```
 * To run tests ``` $ dotnet test VendorOrder.Tests ```
-* To build & run program in development mode ``` $ dotnet run ```
-* To build & run program in production mode ``` dotnet run --launch-profile "production" ```
+* To build & run program, navigate to program directory ``` $ cd VendorOrder ```
+  * To run in development mode ``` $ dotnet run ```
+  * To run in production mode ``` dotnet run --launch-profile "production" ```
 
 ## Known Bugs
 
