@@ -13,8 +13,8 @@
 
 <a href='/vendors/@Model["vendor"].Id'><button class="btn btn-primary">View All @Model["vendor"].Name Orders</button></a>
 <a href='/vendors/'><button class="btn btn-primary">View Vendor List</button></a>
-@* <form path='/vendors/@Model["vendor"].Id/orders/@Model["orders"].Id' method="post">
+<form path='/vendors/@Model["vendor"].Id/orders/@Model["orders"].Id' method="post">
   <input type="hidden" value='@Model["orders"].Id' id="deleteId" name="deleteId">
   <br>
   <button type="submit" class="btn btn-danger">Delete Order</button>
-</form> *@
+</form>
