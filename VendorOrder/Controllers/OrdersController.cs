@@ -30,13 +30,17 @@ namespace VendorOrder.Controllers
     }
 
     // Delete orders based on orderId
-  //   [HttpPost("/vendors/{vendorDeleteId}/orders/{orderDeleteId}")]
-  //   public ActionResult DestroyOrders(int vendorDeleteId, int orderDeleteId)
-  //   {
-  //     // Find the order to delete
-  //     Order orderToDelete = Order.Find(orderDeleteId);
-  //     Order.Delete(orderToDelete);
-  //     return RedirectToAction("Index", "/vendors");
-  //   }
+    [HttpPost("/vendors/{vendorDeleteId}/orders/{orderDeleteId}")]
+    public ActionResult DestroyOrders(int vendorDeleteId, int orderDeleteId)
+    {
+      // Find the order to delete
+      Order orderToDelete = Order.Find(orderDeleteId);
+      // Null all non-Id values
+      orderToDelete.Title = null;
+      orderToDelete. Description = null;
+      orderToDelete.Price = 0;
+      orderToDelete.Date = null;
+      return RedirectToAction("Index", "/vendors");
+    }
   }
 }
