@@ -68,8 +68,9 @@ namespace VendorOrder.Controllers
     {
       // Find the vendor to delete
       Vendor vendorToDelete = Vendor.Find(deleteId); 
-      // Delete vendor
-      Vendor.Delete(vendorToDelete);
+      // Null vendor name and orders
+      vendorToDelete.Name = null;
+      vendorToDelete.Orders = null;
       // Redirect to /vendors
       return RedirectToAction("Index", "/vendors");
     }
